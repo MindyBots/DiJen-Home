@@ -17,26 +17,28 @@ const Carousel = () => {
   const [, setIndex] = useState(0);
   const containerRef = useRef(null);
 
+
   useEffect(() => {
+    const container = containerRef.current;
+  
     const handleAnimation = () => {
-      const container = containerRef.current;
       if (container) {
         const cardWidth = (container.clientWidth - gapBetweenCards * (cardsPerView - 1)) / cardsPerView;
         const newIndex = Math.round(container.scrollLeft / (cardWidth + gapBetweenCards));
-        setIndex(newIndex)
-        
         container.scrollLeft += 2; // Adjust the speed by changing this value
+        setIndex(newIndex);
       }
-      requestAnimationFrame(handleAnimation);
     };
-
-    requestAnimationFrame(handleAnimation);
-
+  
+    // Start the animation loop with setInterval
+    const intervalId = setInterval(handleAnimation, 16); // 16ms is close to 60fps
+  
     return () => {
-      // Cleanup
-      cancelAnimationFrame(handleAnimation);
+      // Clear the interval when the component is unmounted
+      clearInterval(intervalId);
     };
-  }, []);
+  }, [cardsData.length]); // Add cardsData.length as a dependency
+  
 
   const FlipCard = ({ brand, color, cardWidth, info }) => {
     const [isFlipped, setIsFlipped] = useState(false);
