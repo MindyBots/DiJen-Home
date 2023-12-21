@@ -35,13 +35,13 @@ const Carousel = () => {
 
     const cardProps = useSpring({
       opacity: isFlipped ? 0 : 1,
-      transform: `perspective(600px) rotateY(${isFlipped ? 180 : 0}deg) scale(${isHovered ? 1.1 : 1})`,
+      transform: `perspective(600px) rotateY(${isFlipped ? 180 : 0}deg) scale(${isHovered ? 1.05 : 1})`,
       display: isFlipped ? 'none' : 'flex',
     });
 
     const backCardProps = useSpring({
       opacity: isFlipped ? 1 : 0,
-      transform: `perspective(600px) rotateY(${isFlipped ? 0 : -180}deg)`,
+      transform: `perspective(600px) rotateY(${isFlipped ? 0 : -180}deg) scale(${isHovered ? 1.05 : 1})`,
       display: isFlipped ? 'flex' : 'none',
     });
 
