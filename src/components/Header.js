@@ -55,9 +55,6 @@ function Header() {
       </a>
       <h1>DiJen Foods</h1>
       <div className="row">
-      <button className="btn" onClick={handleOpen} style={{ cursor: "pointer" }}>
-        Reach us !!
-      </button>
       </div>
       <div>
         <Modal

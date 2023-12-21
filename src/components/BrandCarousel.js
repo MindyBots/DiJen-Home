@@ -11,7 +11,7 @@ const cardsData = [
 ];
 
 const cardsPerView = 4;
-const gapBetweenCards = 16;
+const gapBetweenCards = 18;
 
 const Carousel = () => {
   const [index, setIndex] = useState(0);
@@ -34,7 +34,7 @@ const Carousel = () => {
   });
 
   return (
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" maxWidth='98%' sx={{ml:1}} >
         <Grid item xs={12}>
           <animated.div
             className="cards"
@@ -73,20 +73,6 @@ const Carousel = () => {
                   {card.brand}
                 </Typography>
                 <br />
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  style={{
-                    marginTop: '8px',
-                    backgroundColor: '#FF5722',
-                    color: '#FFF',
-                    '&:hover': {
-                      backgroundColor: '#E64A19',
-                    },
-                  }}
-                >
-                  Know More
-                </Button>
               </animated.div>
             ))}
           </animated.div>
