@@ -1,6 +1,4 @@
-
 import { Link } from "react-scroll";
-import logo512 from "../assets/images/logo512.png";
 
 function Navbar() {
   document.addEventListener("scroll", function (e) {

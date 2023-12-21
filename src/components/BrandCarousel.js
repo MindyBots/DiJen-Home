@@ -1,35 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 
 const cardsData = [
-  { id: 1, brand: 'Namma Veedu Vasanta Bhavan', color: '#FF4081' },
-  { id: 2, brand: 'Junior Kuppanna', color: '#00BCD4' },
-  { id: 3, brand: 'Madras Coffee House', color: '#4CAF50' },
-  { id: 4, brand: 'Squeez Juice Bars', color: '#FF9800' },
-  { id: 5, brand: 'Dessert Works', color: '#E91E63' },
+  { id: 1, brand: 'Namma Veedu Vasanta Bhavan', color: '#FF4081', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
+  { id: 2, brand: 'Junior Kuppanna', color: '#00BCD4', info: 'Founded in 1960 by Thiru Kuppusamy & Thirumati Rukmini Amma an exponent in Kongu Cuisine, This brand has travelled lands and made people devour on its taste and uniqueness over the last 60 years. The JUNIOR KUPPANNA KITCHENS PRIVATE LIMITED brand needless to say is the leading brand in Kongu regional cuisine.' },
+  { id: 3, brand: 'Madras Coffee House', color: '#4CAF50', info: 'Born in 2010, Madras Coffee House has blossomed into a chain of more than 120 stores, spreading the aroma of authentic South Indian filter coffee throughout India.We believe that a cup of filter coffee is not just a beverage, its a story passed down from generation to generation.' },
+  { id: 4, brand: 'Squeez Juice Bars', color: '#FF9800', info: 'Squeez Juice Bars function with a passion to serve and encourage you to lead a healthy and nutritious life. Each ingredient is carefully picked out from our locally sourced farms, ensuring that your drink is the healthiest and tastiest version of what you asked for.' },
+  { id: 5, brand: 'Dessert Works', color: '#E91E63', info: 'Dessert Works opened in June 2001.  Owner and Head Chef Kristen Repa began her career over 20 years ago, focusing solely on pastry, working at world renowned and award winning pastry shops in the Boston area and in Europe.' },
 ];
 
 const cardsPerView = 4;
 const gapBetweenCards = 18;
 
 const Carousel = () => {
-  const [index, setIndex] = useState(0);
+  const [, setIndex] = useState(0);
+  const containerRef = useRef(null);
 
-  const handleScroll = (event) => {
-    const scrollPosition = event.target.scrollLeft;
-    const cardWidth = (event.target.clientWidth - gapBetweenCards * (cardsPerView - 1)) / cardsPerView;
-    const newIndex = Math.round(scrollPosition / (cardWidth + gapBetweenCards));
-    setIndex(newIndex);
-  };
+  useEffect(() => {
+    const handleAnimation = () => {
+      const container = containerRef.current;
+      if (container) {
+        const cardWidth = (container.clientWidth - gapBetweenCards * (cardsPerView - 1)) / cardsPerView;
+        const newIndex = Math.round(container.scrollLeft / (cardWidth + gapBetweenCards));
+        setIndex(newIndex)
+        
+        container.scrollLeft += 2; // Adjust the speed by changing this value
+      }
+      requestAnimationFrame(handleAnimation);
+    };
 
-  const cardProps = useSpring({
-    scrollLeft: index * ((100 + gapBetweenCards) / cardsPerView),
-    opacity: 1,
-    scale: 1,
-  });
+    requestAnimationFrame(handleAnimation);
 
-  const FlipCard = ({ brand, color, cardWidth }) => {
+    return () => {
+      // Cleanup
+      cancelAnimationFrame(handleAnimation);
+    };
+  }, []);
+
+  const FlipCard = ({ brand, color, cardWidth, info }) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -92,8 +101,8 @@ const Carousel = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <Typography variant="h5" style={{ color: '#FFF' }}>
-            Back Content
+          <Typography variant="h6" style={{ color: '#FFF' }}>
+            {info}
           </Typography>
         </animated.div>
       </>
@@ -105,16 +114,14 @@ const Carousel = () => {
   return (
     <Grid container spacing={2} justifyContent="center" maxWidth="98%" sx={{ ml: 1 }}>
       <Grid item xs={12}>
-        <animated.div
+        <div
           className="cards"
+          ref={containerRef}
           style={{
             display: 'flex',
-            overflowX: 'scroll',
-            scrollSnapType: `x mandatory`,
-            ...cardProps,
+            overflowX: 'hidden',
             height: '300px',
           }}
-          onScroll={handleScroll}
         >
           {cardsData.map((card, cardIndex) => (
             <FlipCard
@@ -122,9 +129,10 @@ const Carousel = () => {
               brand={card.brand}
               color={card.color}
               cardWidth={cardWidth}
+              info={card.info}
             />
           ))}
-        </animated.div>
+        </div>
       </Grid>
     </Grid>
   );
