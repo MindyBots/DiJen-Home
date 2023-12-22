@@ -1,4 +1,3 @@
-import aboutImg from "../assets/images/img1.png";
 
 function About() {
   return (

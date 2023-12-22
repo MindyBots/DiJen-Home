@@ -53,7 +53,7 @@ function Navbar() {
                 spy={true}
                 smooth={true}
                 duration={1000}
-                to="headerbg"
+                to="about-scroll"
               >
                 About Us
               </Link>

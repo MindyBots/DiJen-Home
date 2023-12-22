@@ -20,24 +20,42 @@ const Carousel = () => {
 
   useEffect(() => {
     const container = containerRef.current;
+
+    if (!container) {
+      console.error("Container not found");
+      return;
+    }
   
     const handleAnimation = () => {
-      if (container) {
-        const cardWidth = (container.clientWidth - gapBetweenCards * (cardsPerView - 1)) / cardsPerView;
-        const newIndex = Math.round(container.scrollLeft / (cardWidth + gapBetweenCards));
-        container.scrollLeft += 2; // Adjust the speed by changing this value
-        setIndex(newIndex);
+      const cardWidth = (container.clientWidth - gapBetweenCards * (cardsPerView - 1)) / cardsPerView;
+      const newIndex = Math.round(container.scrollLeft / (cardWidth + gapBetweenCards));
+  
+      const scrollAmount = 2;
+      container.scrollLeft += scrollAmount;
+  
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        container.scrollLeft = 0;
       }
+  
+      setIndex(newIndex);
     };
   
-    // Start the animation loop with setInterval
-    const intervalId = setInterval(handleAnimation, 16); // 16ms is close to 60fps
+    const intervalId = setInterval(() => {
+      try {
+        handleAnimation();
+      } catch (error) {
+        console.error("Error in animation loop:", error);
+        clearInterval(intervalId);
+      }
+    }, 16);
   
     return () => {
-      // Clear the interval when the component is unmounted
       clearInterval(intervalId);
     };
-  }, [cardsData.length]); // Add cardsData.length as a dependency
+  }, [containerRef, cardsPerView, gapBetweenCards]); // Dependency array unchanged
+  
+  
+   // Add cardsData.length as a dependency
   
 
   const FlipCard = ({ brand, color, cardWidth, info }) => {
@@ -75,8 +93,8 @@ const Carousel = () => {
             textAlign: 'center',
           }}
           onClick={() => setIsFlipped(!isFlipped)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => setIsHovered(false)}
+          onMouseLeave={() => setIsHovered(true)}
         >
           <Typography variant="h5" style={{ color: '#FFF' }}>
             {brand}
@@ -101,7 +119,7 @@ const Carousel = () => {
           }}
           onClick={() => setIsFlipped(!isFlipped)}
           onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseLeave={() => setIsHovered(true)}
         >
           <Typography variant="h6" style={{ color: '#FFF' }}>
             {info}
