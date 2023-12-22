@@ -57,7 +57,6 @@ const Carousel = () => {
         }
 
         setIndex(newIndex);
-        setIsFlipped(false);
       }
     };
 
