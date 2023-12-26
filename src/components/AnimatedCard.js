@@ -1,7 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { Card, CardContent, Typography, Button } from '@mui/material';
+import { Card, CardContent, Typography, Grid } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
+import Button from '@mui/material/Button';
 
 const cardStyle = {
   width: '100%',
@@ -76,27 +82,57 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
     display: isFlipped ? 'flex' : 'none',
   });
 
-  const handleClick = () => {
-    setIsFlipped((prev) => !prev);
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  //const handleClick = () => {
+    //setIsFlipped((prev) => !prev);
+  //};
 
   return (
    <>
-    <animated.div style={{ ...props, ...cardStyle, ...cardProps }} onClick={handleClick} >
-      <Card elevation={0} sx={cardStyle}>
+    <animated.div style={{ ...props, ...cardStyle, ...cardProps }}>
+      <Card elevation={0} sx={cardStyle} onClick={handleClickOpen}>
         <CardContent style={contentStyle}>
-          {imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}
-          <Typography variant="h5" style={titleStyle}>
-            {title}
-          </Typography>
-          <Typography variant="body1" style={descriptionStyle}>
-            {description}
-          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
+            <Grid item xs={6}>      
+              <Typography variant="h5" style={titleStyle}>
+                {title}
+              </Typography>
+              <Typography variant="body1" style={descriptionStyle}>
+                {description}
+              </Typography>
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
+      <Dialog open={open} onClose={handleClose}>
+        <CardContent style={contentStyle}>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
+            <Grid item xs={6}>      
+              <DialogTitle>{title}</DialogTitle>
+              <DialogContent>
+                <DialogContentText>{description}</DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} justifyContent='center'>Close</Button>
+              </DialogActions>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Dialog>
     </animated.div>
 
-    <animated.div style={{ ...props, ...cardStyle, ...backCardProps }} onClick={handleClick} >
+    <animated.div style={{ ...props, ...cardStyle, ...backCardProps }} /*onClick={handleClick}*/ >
       <Card elevation={0} sx={cardStyle}>
         <CardContent style={contentStyle}>
           <Typography variant="h4" style={titleStyle}>
