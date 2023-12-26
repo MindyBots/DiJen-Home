@@ -6,8 +6,8 @@ const cardsData = [
   { id: 1, brand: 'Namma Veedu Vasanta Bhavan', color: '#FF4081', image: 'https://www.vasantabhavan.in/assets/images/VB_LOGO.png', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
   { id: 2, brand: 'Junior Kuppanna', color: '#00BCD4', image: 'https://kuppanna.com/cdn/shop/files/Artboard-03_f9c57690-ac6e-435e-90e4-5c10ae492bbd_180x@2x.png?v=1642655973', info: 'Founded in 1960 by Thiru Kuppusamy & Thirumati Rukmini Amma an exponent in Kongu Cuisine, This brand has travelled lands and made people devour on its taste and uniqueness over the last 60 years. The JUNIOR KUPPANNA KITCHENS PRIVATE LIMITED brand needless to say is the leading brand in Kongu regional cuisine.' },
   { id: 3, brand: 'Madras Coffee House', color: '#4CAF50', image: 'https://madrascoffeehouse.com/wp-content/uploads/2023/05/cropped-mch-Logo.jpg', info: 'Born in 2010, Madras Coffee House has blossomed into a chain of more than 120 stores, spreading the aroma of authentic South Indian filter coffee throughout India.We believe that a cup of filter coffee is not just a beverage, its a story passed down from generation to generation.' },
-  { id: 4, brand: 'Squeez Juice Bars', color: '#FF9800', image: 'https://marinamallchennai.com/wp-content/uploads/2020/08/squeeze-juice-b.jpg', info: 'Squeez Juice Bars function with a passion to serve and encourage you to lead a healthy and nutritious life. Each ingredient is carefully picked out from our locally sourced farms, ensuring that your drink is the healthiest and tastiest version of what you asked for.' },
-  { id: 5, brand: 'Dessert Works', color: '#E91E63', image: 'https://www.facebook.com/photo/?fbid=412079011042300&set=a.412078991042302&__tn__=%3C', info: 'Dessert Works opened in June 2001.  Owner and Head Chef Kristen Repa began her career over 20 years ago, focusing solely on pastry, working at world renowned and award winning pastry shops in the Boston area and in Europe.' }
+  { id: 4, brand: 'Squeez Juice Bars', color: '#FF9800', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/9/27/2487225616-187-2022-9-27.png', info: 'Squeez Juice Bars function with a passion to serve and encourage you to lead a healthy and nutritious life. Each ingredient is carefully picked out from our locally sourced farms, ensuring that your drink is the healthiest and tastiest version of what you asked for.' },
+  { id: 5, brand: 'Dessert Works', color: '#E91E63', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/2/9/61392482738-221-2022-2-9.png', info: 'Dessert Works opened in June 2001.  Owner and Head Chef Kristen Repa began her career over 20 years ago, focusing solely on pastry, working at world renowned and award winning pastry shops in the Boston area and in Europe.' }
 ];
 
 
@@ -131,10 +131,7 @@ const Carousel = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Typography variant="h5" style={{ color: '#FFF' }}>
-            {image}
-            {brand}
-          </Typography>
+          {image && <img src={image} alt="Card" />}
         </animated.div>
 
         <animated.div
@@ -186,11 +183,11 @@ const Carousel = () => {
               color={card.color}
               cardWidth={cardWidth}
               info={card.info}
-              isFirstCard={cardIndex === cardsData.length - 5}
+              image={card.image}
               isSecondCard={cardIndex === cardsData.length - 4}
               isThirdCard={cardIndex === cardsData.length - 3}
               isFourthCard={cardIndex === cardsData.length - 2}
-              //isFifthCard={cardIndex === cardsData.length - 1}
+              isFifthCard={cardIndex === cardsData.length - 1}
             />
           ))}
         </div>
