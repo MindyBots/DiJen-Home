@@ -37,6 +37,20 @@ function Footer() {
             <div className="row">
               <div className="col-md-3">
                 <p className="footer-title">Contact</p>
+                <ul style={{color:'grey'}}>
+                  <li>
+                    Mr. Aswin Thottupurath (Director/ Managing Director)
+                  </li>
+                  <li>
+                    Mr. Surendran Choondanil (Director)
+                  </li>
+                  <li>
+                    Plot No. 106, 4th Main Road, Krishna Nagar, Perumbakkam, Chennai - 600 100
+                  </li>
+                  <li>
+                    +91-72 008 008 86
+                  </li>
+                </ul>
               </div>
               <div className="col-md-3">
                 <p className="footer-title">Social Media</p>

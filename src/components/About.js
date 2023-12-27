@@ -9,19 +9,27 @@ function About() {
           <div>
             <h2 className="main-title about-h2">ABOUT US</h2>
             <p className="main-p">
-              At <strong>MINDYBOTS</strong>, we are dedicated to ushering in a new era of efficiency, growth, and transparency for businesses through cutting-edge automation solutions. With a deep understanding of the evolving needs of modern enterprises, we have made it our mission to empower organizations of all sizes and industries to streamline their operations, boost productivity, and achieve sustainable success.
+              <strong>DiJen Foods</strong> established in 2019 under single proprietorship evolved into DiJen Foods Pvt Ltd in 2023. As a first step, we intend to open Asian Stories, a restaurant serving Pan Asian cuisine, with the goal of growing the brand utilizing the franchise model.
             </p>
             <h3>Our Vision</h3>
-            <p className="main-p">Our vision is a world where businesses can focus on innovation and growth, unburdened by the repetitive and time-consuming tasks that often hold them back. We see a future where every business, regardless of its size or industry, can harness the power of automation to unlock its full potential while ensuring complete transparency in all processes.</p>
-            <h3>Why MINDYBOTS</h3>
+            <p className="main-p">Our Vision is to create a Pan Asian cuisine restaurant showcasing rich flavors and cultural diversity of Asia and also to enhance the dining experience with AI technology and combine skilled chef's artistry with AI innovation.</p>
             <ul>
-              <li className="main-p"><strong>Expertise:</strong> Our team of seasoned professionals brings years of experience and expertise to the table. We pride ourselves on staying at the forefront of technological advancements to provide you with the most cutting-edge solutions.</li>
-              <li className="main-p"><strong>Tailored Solutions:</strong> We recognize that every business is unique. That's why we craft bespoke solutions tailored to your specific needs, ensuring that you receive maximum value from our services.</li>
-              <li className="main-p"><strong>Cost-Efficiency:</strong> We understand the importance of managing costs effectively. Our solutions not only enhance productivity but also provide a substantial return on investment, allowing you to allocate resources where they matter most.</li>
-              <li className="main-p"><strong>Reliability:</strong> Trust is the foundation of our relationships. You can rely on us to deliver on our promises with integrity and transparency.</li>
+              <li className="main-p"><strong>AI-Powered Personalization:</strong> Analyze guest preferences using AI. Tailor menu recommendations based on dietary restrictions and preferences. Continuous learning and adaptation for exceptional dining experiences.</li>
+              <li className="main-p"><strong>Efficiency and Streamlining with AI:</strong> Automate order processing. Optimize inventory management. Provide a seamless and efficient dining experience.</li>
+              <li className="main-p"><strong>Preserving Authenticity:</strong> Curate a menu with traditional recipes, local ingredients, and culinary techniques. Blend heritage and innovation in each dish.</li>
+              <li className="main-p"><strong>Atmosphere & Experience:</strong> Blend Asian hospitality and AI innovation. Create a place for culinary adventure. Embrace the convenience and personalization of AI.</li>
             </ul>
             <h3>Join Us</h3>
-            <p className="main-p">We invite you to embark on this journey with us. Together, we can reshape the future of your business, leaving behind the mundane and embracing the extraordinary. Let's chart a course towards success, where your business can flourish, and your vision can become a reality.</p>
+            <p className="main-p">Redefine Pan Asian cuisine with AI. Experience the fusion of tradition and technology at our restaurant.</p>
+            <h3>Our Mission</h3>
+            <p className="main-p">Our Mission is to seamlessly blend traditional culinary artistry with AI technology in a Pan Asian cuisine restaurant and to provide unforgettable dining experiences celebrating diverse Asian flavors and cultures.</p>
+            <ul>
+              <li className="main-p"><strong>Menu Curation:</strong> Collaborate with expert chef for meticulous menu curation. Represent authentic tastes and culinary traditions from various Asian countries. Ensure precise ingerdient proportions and cooking methods using automated kitchen equipment.</li>
+              <li className="main-p"><strong>AI-Powered Personalization:</strong> Utilize AI to learn guest preferences, dietary requirements, and past orders. Recommend personalized menu options tailored to each guest's taste. Enable guests to explore new flavors and enjoy customized dining adventures.</li>
+              <li className="main-p"><strong>Operational Efficiency with AI:</strong> Implement intelligent inventory management and automated order processing. Optimize efficiency, minimize wait times, and provide a seamless dining experience.</li>
+              <li className="main-p"><strong>Balancing Tradition and innovation:</strong> Integrate AI while respecting and honoring the cultural heritage of Asian cuisine. Strive for a harmonious balance between tradition and innovation. Showcase the skilled craftsmanship of our chefs in every dish.</li>
+              <li className="main-p"><strong>Creating a Dining destination:</strong> Offer an immersive experience in Asian flavors with AI-driven personalization. Guests to leave with memories of outstanding culinary adventures. Redefine the boundaries of Pan Asian cuisine through AI.</li>
+            </ul>
           </div>
         </div>
       </div>
