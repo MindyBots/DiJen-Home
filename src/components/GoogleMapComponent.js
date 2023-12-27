@@ -1,21 +1,24 @@
-// GoogleMapComponent.jsx
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
-const containerStyle = {
-  width: '100%',
-  height: 'auto', // Adjust the height as needed
-};
+const GoogleMapComponent = ({ latitude, longitude }) => {
+  const mapContainerStyle = {
+    width: '100%',
+    height: '100%',
+  };
 
-const center = {
-  lat: 37.7749, // Replace with the desired latitude
-  lng: -122.4194, // Replace with the desired longitude
-};
+  const center = {
+    lat: latitude,
+    lng: longitude,
+  };
 
-const GoogleMapComponent = () => {
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+    <LoadScript googleMapsApiKey="AIzaSyDVylYvyVbOI__1VqNk6S2Q9ShARXpoY6c">
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        center={center}
+        zoom={15}
+      >
         <Marker position={center} />
       </GoogleMap>
     </LoadScript>
