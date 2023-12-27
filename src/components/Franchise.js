@@ -14,7 +14,7 @@ const Franchise = () => {
     email: '',
     phoneNumber: '',
     selectBrand: '',
-  });  
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,13 +24,24 @@ const Franchise = () => {
     }));
   };
 
+  const isFormValid = () => {
+    // Check if any required field is empty
+    return Object.values(formData).every((value) => value !== '');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      alert('Please fill in all fields.'); // Display an error message
+      return;
+    }
+
     // Handle form submission logic here
     console.log('Form submitted:', formData);
   };
 
-  const selectOptions = ['Option 1', 'Option 2', 'Option 3'];
+  const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works'];
 
   return (
     <Container maxWidth="md">
@@ -42,12 +53,12 @@ const Franchise = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          margin: 'auto', 
-          marginTop: 15, 
-          borderRadius: 8
+          margin: 'auto',
+          marginTop: 15,
+          borderRadius: 8,
         }}
       >
-        <Typography variant="h4" gutterBottom alignItems='center' sx={{mb:2}}>
+        <Typography variant="h4" gutterBottom sx={{mb:2}}>
           Franchise Form
         </Typography>
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
@@ -95,17 +106,24 @@ const Franchise = () => {
             fullWidth
             margin="normal"
             select
-            name="selectBrand"  // Change the name here
-            value={formData.selectBrand}  // Update the reference here
+            name="selectBrand"
+            value={formData.selectBrand}
             onChange={handleChange}
           >
-            {selectOptions.map((option, index) => (
-              <MenuItem key={index} value={option}>
-                {option}
+            {selectBrands.map((brand, index) => (
+              <MenuItem key={index} value={brand}>
+                {brand}
               </MenuItem>
             ))}
           </TextField>
-          <Button type="submit" variant="contained" color="primary" fullWidth sx={{marginTop:2}}>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            disabled={!isFormValid()} 
+            sx={{mt:2}}
+          >
             Submit
           </Button>
         </form>
