@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
-import GoogleMapComponent from './GoogleMapComponent';
 
 const cardsData = [
   { id: 1, color: '#FF4081', image: 'https://www.vasantabhavan.in/assets/images/VB_LOGO.png', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
@@ -9,7 +8,7 @@ const cardsData = [
   { id: 3, color: '#4CAF50', image: 'https://madrascoffeehouse.com/wp-content/uploads/2023/05/cropped-mch-Logo.jpg', info: 'Born in 2010, Madras Coffee House has blossomed into a chain of more than 120 stores, spreading the aroma of authentic South Indian filter coffee throughout India.We believe that a cup of filter coffee is not just a beverage, its a story passed down from generation to generation.' },
   { id: 4, color: '#FF9800', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/9/27/2487225616-187-2022-9-27.png', info: 'Squeez Juice Bars function with a passion to serve and encourage you to lead a healthy and nutritious life. Each ingredient is carefully picked out from our locally sourced farms, ensuring that your drink is the healthiest and tastiest version of what you asked for.' },
   { id: 5, color: '#E91E63', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/2/9/61392482738-221-2022-2-9.png', info: 'Dessert Works opened in June 2001.  Owner and Head Chef Kristen Repa began her career over 20 years ago, focusing solely on pastry, working at world renowned and award winning pastry shops in the Boston area and in Europe.' },
-  { id: 6, brand: "Chop 'N' Stix", color: '#eeff41', map: 'map' }
+  { id: 6, brand: "Chop 'N' Stix", color: '#eeff41'}
 ];
 
 
@@ -76,7 +75,7 @@ const Carousel = () => {
     };
   }, [containerRef, cardsPerView, gapBetweenCards, isAnimationPaused]);
 
-  const FlipCard = ({ map, brand, color, cardWidth, info, isSixthCard, isSecondCard, isThirdCard, isFourthCard, isFifthCard, image }) => {
+  const FlipCard = ({ brand, color, cardWidth, info, isSixthCard, isSecondCard, isThirdCard, isFourthCard, isFifthCard, image }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const cardProps = useSpring({
@@ -134,8 +133,7 @@ const Carousel = () => {
           onMouseLeave={handleMouseLeave}
         >
           {image && <img src={image} alt="Card" />}
-          <Typography variant='h5'>{brand}</Typography> 
-          <Typography variant='h6'>{map}</Typography> 
+          <Typography variant='h5'>{brand}</Typography>
         </animated.div>
 
         <animated.div
