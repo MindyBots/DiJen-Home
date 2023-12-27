@@ -6,8 +6,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
 
 const cardStyle = {
   width: '100%',
@@ -114,18 +112,23 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
           </Grid>
         </CardContent>
       </Card>
-      <Dialog open={open} onClose={handleClose}>
-        <CardContent style={contentStyle}>
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth='md' PaperProps={{
+        style: {
+          borderRadius: 16,
+          padding: 16,
+        },
+      }}>
+        <CardContent style={contentStyle} onClick={handleClose}>
           <Grid container spacing={2}>
             <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
             <Grid item xs={6}>      
-              <DialogTitle>{title}</DialogTitle>
+              <DialogTitle>
+                {title}
+              </DialogTitle>
               <DialogContent>
                 <DialogContentText>{description}</DialogContentText>
+                <DialogContentText>{info}</DialogContentText>
               </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} justifyContent='center'>Close</Button>
-              </DialogActions>
             </Grid>
           </Grid>
         </CardContent>
