@@ -13,7 +13,7 @@ const GoogleMapComponent = ({ latitude, longitude }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDVylYvyVbOI__1VqNk6S2Q9ShARXpoY6c">
+    <LoadScript googleMapsApiKey="YOURAPIKEY">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}
