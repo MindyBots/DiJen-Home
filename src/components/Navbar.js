@@ -1,4 +1,5 @@
 import { Link } from "react-scroll";
+import { Link as RouterLink } from 'react-router-dom';
 
 function Navbar() {
   document.addEventListener("scroll", function (e) {
@@ -107,6 +108,15 @@ function Navbar() {
               >
                 Contact Us
               </Link>
+            </li>
+            <li>
+              <RouterLink
+                to="/franchise"
+                onClick={openBar}
+                duration={1000}
+              >
+                Franchise
+              </RouterLink>
             </li>
           </ul>
           <div className="button" onClick={openBar}>
