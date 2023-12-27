@@ -10,11 +10,7 @@ function Footer() {
           <div className="side1">
             <div className="row">
               <div className="col-md-3">
-                <h1 className="logo">MINDYBOTS</h1>
-                <p className="footer-text">
-                  Automate . Grow . Succeed .
-        
-                </p>
+                <h1 className="logo">DiJen Foods</h1>
               </div>
               <div className="col-md-3">
                 <p className="footer-title">Navigation</p>
@@ -28,13 +24,10 @@ function Footer() {
                   > Home </Link>
                   </li>
                   <li>
-                  <Link to="services" spy={true} smooth={true} duration={1000} > Services </Link>
+                  <Link to="services" spy={true} smooth={true} duration={1000} > Brands </Link>
                   </li>
                   <li>
-                  <Link to="about-scroll" spy={true} smooth={true} duration={1000}>About Us  </Link>
-                  </li>
-                  <li>
-                  <Link to="contact" spy={true} smooth={true} duration={1000}> Contact  </Link>
+                  <Link to="about-scroll" spy={true} smooth={true} duration={1000}> About Us </Link>
                   </li>
                 </ul>
               </div>
@@ -44,20 +37,18 @@ function Footer() {
             <div className="row">
               <div className="col-md-3">
                 <p className="footer-title">Contact</p>
-                <ul>
-                  <li>
-                    <Link to="#" > mindybots2023@outlook.com </Link>
-                  </li>
-                  <li>
-                    <Link to="#" > +91 9342152501</Link>
-                  </li>
-                </ul>
               </div>
               <div className="col-md-3">
                 <p className="footer-title">Social Media</p>
                 <ul>
                   <li>
-                    <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/MINDYBOTS"> Linkedin</a>
+                    <a target="_blank" rel="noreferrer" href="#">Facebook</a>
+                  </li>
+                  <li>
+                    <a target="_blank" rel="noreferrer" href="#">Youtube</a>
+                  </li>
+                  <li>
+                    <a target="_blank" rel="noreferrer" href="#">LinkedIn</a>
                   </li>
                 </ul>
               </div>
