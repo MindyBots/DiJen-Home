@@ -10,6 +10,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 const cardStyle = {
   width: '100%',
   minHeight: '100px',
+  backgroundColor: '#e8f5e9',
   position: 'relative',
   overflow: 'hidden',
   borderRadius: '16px',
@@ -34,6 +35,13 @@ const contentStyle = {
 const imageStyle = {
   width: '100%',
   height: '500px',
+  borderRadius: '8px',
+  marginBottom: '12px',
+};
+
+const imageStyle1 = {
+  width: '100%',
+  height: '100%',
   borderRadius: '8px',
   marginBottom: '12px',
 };
@@ -116,11 +124,12 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
         style: {
           borderRadius: 16,
           padding: 16,
+          backgroundColor: '#efebe9'
         },
       }}>
         <CardContent style={contentStyle} onClick={handleClose}>
           <Grid container spacing={2}>
-            <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
+            <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle1} />}</Grid>
             <Grid item xs={6}>      
               <DialogTitle>
                 {title}

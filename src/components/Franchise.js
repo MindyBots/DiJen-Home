@@ -6,8 +6,10 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 
 const Franchise = () => {
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,6 +17,8 @@ const Franchise = () => {
     phoneNumber: '',
     selectBrand: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,9 +45,14 @@ const Franchise = () => {
     console.log('Form submitted:', formData);
   };
 
+  const handleClick = () => {
+      navigate('/');
+  };
+
   const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works'];
 
   return (
+    <div style={{ backgroundColor: '#e8eaf6', minHeight: '100vh', padding: '16px' }}>
     <Container maxWidth="md">
       <Box
         component={Paper}
@@ -54,11 +63,11 @@ const Franchise = () => {
           flexDirection: 'column',
           alignItems: 'center',
           margin: 'auto',
-          marginTop: 15,
+          marginTop: 25,
           borderRadius: 8,
         }}
       >
-        <Typography variant="h4" gutterBottom sx={{mb:2}}>
+        <Typography variant="h4" gutterBottom sx={{mb:3}}>
           Franchise Form
         </Typography>
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
@@ -118,17 +127,20 @@ const Franchise = () => {
           </TextField>
           <Button
             type="submit"
+            href='/'
             variant="contained"
             color="primary"
             fullWidth
             disabled={!isFormValid()} 
-            sx={{mt:2}}
+            sx={{mt:3}}
+            onClick={handleClick}
           >
             Submit
           </Button>
         </form>
       </Box>
     </Container>
+    </div>
   );
 };
 

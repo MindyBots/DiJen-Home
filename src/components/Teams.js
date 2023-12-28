@@ -37,7 +37,7 @@ const Teams = () => {
       <CssBaseline />
       <Container maxWidth="lg" style={{ marginTop: '40px', overflow: 'hidden' }}>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={0.8} sx={{mt:30}}><Button onClick={handlePrev} variant='contained'><ChevronLeftIcon fontSize='large' /></Button></Grid>
+          <Grid item xs={0.8} sx={{mt:30}}><Button onClick={handlePrev} variant='contained' color='warning'><ChevronLeftIcon fontSize='large' /></Button></Grid>
           <Grid item xs={10}>
             <AnimatedCard
               title={cards[currentCardIndex].title}
@@ -46,7 +46,7 @@ const Teams = () => {
               info={cards[currentCardIndex].info}
             />
           </Grid>
-          <Grid item xs={1} sx={{mt:30}}><Button onClick={handleNext} variant='contained'><ChevronRightIcon fontSize='large' /></Button></Grid>
+          <Grid item xs={1} sx={{mt:30}}><Button onClick={handleNext} variant='contained' color='warning'><ChevronRightIcon fontSize='large' /></Button></Grid>
         </Grid>
       </Container>
     </ThemeProvider>

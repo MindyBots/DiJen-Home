@@ -19,8 +19,6 @@ function About() {
               <li className="main-p"><strong>Preserving Authenticity:</strong> Curate a menu with traditional recipes, local ingredients, and culinary techniques. Blend heritage and innovation in each dish.</li>
               <li className="main-p"><strong>Atmosphere & Experience:</strong> Blend Asian hospitality and AI innovation. Create a place for culinary adventure. Embrace the convenience and personalization of AI.</li>
             </ul>
-            <h3>Join Us</h3>
-            <p className="main-p">Redefine Pan Asian cuisine with AI. Experience the fusion of tradition and technology at our restaurant.</p>
             <h3>Our Mission</h3>
             <p className="main-p">Our Mission is to seamlessly blend traditional culinary artistry with AI technology in a Pan Asian cuisine restaurant and to provide unforgettable dining experiences celebrating diverse Asian flavors and cultures.</p>
             <ul>
@@ -30,6 +28,8 @@ function About() {
               <li className="main-p"><strong>Balancing Tradition and innovation:</strong> Integrate AI while respecting and honoring the cultural heritage of Asian cuisine. Strive for a harmonious balance between tradition and innovation. Showcase the skilled craftsmanship of our chefs in every dish.</li>
               <li className="main-p"><strong>Creating a Dining destination:</strong> Offer an immersive experience in Asian flavors with AI-driven personalization. Guests to leave with memories of outstanding culinary adventures. Redefine the boundaries of Pan Asian cuisine through AI.</li>
             </ul>
+            <h3>Join Us</h3>
+            <p className="main-p">Redefine Pan Asian cuisine with AI. Experience the fusion of tradition and technology at our restaurant.</p>
           </div>
         </div>
       </div>

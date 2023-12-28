@@ -37,7 +37,7 @@ function Footer() {
             <div className="row">
               <div className="col-md-3">
                 <p className="footer-title">Contact</p>
-                <ul style={{color:'grey'}}>
+                <ul style={{color:'white'}}>
                   <li>
                     Mr. Aswin Thottupurath (Director/ Managing Director)
                   </li>

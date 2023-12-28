@@ -5,7 +5,7 @@ import Teams from './Teams';
 function Main() {
   return (
     <>
-      <main>
+      <main style={{backgroundColor:'#fffde7'}}>
         <Services />
         <About />
         <Teams />
