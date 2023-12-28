@@ -35,7 +35,7 @@ const Franchise = () => {
     // Regular expressions for validation
     const nameRegex = /^[A-Za-z]*$/;
     const emailRegex = /^[A-Za-z0-9@.]*$/;
-    const phoneRegex = /^[0-9]*$/;
+    const phoneRegex = /^[0-9+]*$/;
   
     // Validation logic
     let isValid = true;
