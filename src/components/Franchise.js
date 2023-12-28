@@ -7,6 +7,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
+import { FormControl } from '@mui/material';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 
 const Franchise = () => {
 
@@ -18,14 +21,58 @@ const Franchise = () => {
     selectBrand: '',
   });
 
+  const [alphabetsValue, setAlphabetsValue] = useState('');
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+
+    if (name === 'lastName' && value.toLowerCase() === formData.firstName.toLowerCase()) {
+      return;
+    }
+  
+    // Regular expressions for validation
+    const nameRegex = /^[A-Za-z]*$/;
+    const emailRegex = /^[A-Za-z0-9@.]*$/;
+    const phoneRegex = /^[0-9]*$/;
+  
+    // Validation logic
+    let isValid = true;
+  
+    switch (name) {
+      case 'firstName':
+        isValid = nameRegex.test(value);
+        break;
+      case 'lastName':
+        isValid = nameRegex.test(value);
+        break;
+      case 'email':
+        isValid = emailRegex.test(value);
+        break;
+      case 'phoneNumber':
+        isValid = phoneRegex.test(value);
+        break;
+      default:
+        break;
+    }
+
+    if (name === 'selectBrand') {
+      setAlphabetsValue('');
+    }
+  
+    if (isValid) {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleAlphabetsChange = (event) => {
+    // Use a regular expression to allow only alphabets
+    const newValue = event.target.value.replace(/[^A-Za-z]/g, '');
+    setAlphabetsValue(newValue);
   };
 
   const isFormValid = () => {
@@ -49,7 +96,7 @@ const Franchise = () => {
       navigate('/');
   };
 
-  const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works'];
+  const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works', 'Others'];
 
   return (
     <div style={{ backgroundColor: '#e8eaf6', minHeight: '100vh', padding: '16px' }}>
@@ -109,22 +156,34 @@ const Franchise = () => {
             value={formData.phoneNumber}
             onChange={handleChange}
           />
-          <TextField
-            label="Select Brand"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            select
-            name="selectBrand"
-            value={formData.selectBrand}
-            onChange={handleChange}
-          >
-            {selectBrands.map((brand, index) => (
-              <MenuItem key={index} value={brand}>
-                {brand}
-              </MenuItem>
-            ))}
-          </TextField>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="selectBrand-label">Select Brand</InputLabel>
+              <Select
+                labelId="selectBrand-label"
+                id="selectBrand"
+                value={formData.selectBrand}
+                label="Select Brand"
+                name="selectBrand"
+                onChange={handleChange}
+              >
+                {selectBrands.map((brand, index) => (
+                  <MenuItem key={index} value={brand}>
+                    {brand}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            {formData.selectBrand === 'Others' && (
+              <TextField
+                label="Enter your brand"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                name="brand"
+                value={alphabetsValue}
+                onChange={handleAlphabetsChange}
+              />
+            )}
           <Button
             type="submit"
             href='/'
