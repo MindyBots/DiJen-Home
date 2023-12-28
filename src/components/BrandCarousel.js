@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
+import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
 
 const cardsData = [
   { id: 1, color: '#FF4081', image: 'https://www.vasantabhavan.in/assets/images/VB_LOGO.png', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
@@ -15,7 +16,6 @@ const cardsData = [
 const cardsPerView = 4;
 const gapBetweenCards = 18;
 
-// Custom hook for continuous flip animation
 const useContinuousFlip = (callback, interval) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -28,14 +28,20 @@ const useContinuousFlip = (callback, interval) => {
   }, [callback, interval]);
 };
 
-// ... (imports)
-
-// ... (imports)
-
 const Carousel = () => {
   const [, setIndex] = useState(0);
   const containerRef = useRef(null);
   const [isAnimationPaused, setAnimationPaused] = useState(false);
+
+  const mapContainerStyle = {
+    width: '50%',
+    height: '50%',
+  };
+
+  const center = {
+    lat: 13.527309605666444,
+    lng: 80.17107971761733,
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -180,7 +186,6 @@ const Carousel = () => {
           {cardsData.map((card, cardIndex) => (
             <FlipCard
               key={card.id}
-              brand={card.brand}
               color={card.color}
               cardWidth={cardWidth}
               info={card.info}
@@ -191,6 +196,17 @@ const Carousel = () => {
               isFifthCard={cardIndex === cardsData.length - 2}
               isSixthCard={cardIndex === cardsData.length - 1}
             />
+            /*{cardIndex === cardsData.length - 1 && (
+              <LoadScript googleMapsApiKey="AIzaSyDVylYvyVbOI__1VqNk6S2Q9ShARXpoY6c">
+                <GoogleMap
+                  mapContainerStyle={mapContainerStyle}
+                  center={center}
+                  zoom={15}
+                >
+                  <Marker position={center} />
+                </GoogleMap>
+              </LoadScript>
+            )}*/
           ))}
         </div>
       </Grid>
