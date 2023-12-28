@@ -87,9 +87,6 @@ const Franchise = () => {
       alert('Please fill in all fields.'); // Display an error message
       return;
     }
-
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
   };
 
   const handleClick = () => {
