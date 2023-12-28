@@ -8,7 +8,7 @@ const cardsData = [
   { id: 3, color: '#4CAF50', image: 'https://madrascoffeehouse.com/wp-content/uploads/2023/05/cropped-mch-Logo.jpg', info: 'Born in 2010, Madras Coffee House has blossomed into a chain of more than 120 stores, spreading the aroma of authentic South Indian filter coffee throughout India.We believe that a cup of filter coffee is not just a beverage, its a story passed down from generation to generation.' },
   { id: 4, color: '#FF9800', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/9/27/2487225616-187-2022-9-27.png', info: 'Squeez Juice Bars function with a passion to serve and encourage you to lead a healthy and nutritious life. Each ingredient is carefully picked out from our locally sourced farms, ensuring that your drink is the healthiest and tastiest version of what you asked for.' },
   { id: 5, color: '#E91E63', image: 'https://public-data.phoenixnhance.com/retailerDetails/2022/2/9/61392482738-221-2022-2-9.png', info: 'Dessert Works opened in June 2001.  Owner and Head Chef Kristen Repa began her career over 20 years ago, focusing solely on pastry, working at world renowned and award winning pastry shops in the Boston area and in Europe.' },
-  { id: 6, brand: "Chop 'N' Stix", color: '#eeff41'}
+  { id: 6, color: '#e53935', image: 'https://i.pinimg.com/280x280_RS/af/88/03/af8803445a3896c2bbb0bc99189569a0.jpg', info: 'If you want to try Chinese and Sichuan cuisines, take your chance and come to this restaurant. Most people note that you can have good fried chicken, mushrooms and fried mushrooms here. Taste tasty brownies that are proposed at Chop N Stix.'}
 ];
 
 
@@ -75,7 +75,7 @@ const Carousel = () => {
     };
   }, [containerRef, cardsPerView, gapBetweenCards, isAnimationPaused]);
 
-  const FlipCard = ({ brand, color, cardWidth, info, isSixthCard, isSecondCard, isThirdCard, isFourthCard, isFifthCard, image }) => {
+  const FlipCard = ({ color, cardWidth, info, isSixthCard, isSecondCard, isThirdCard, isFourthCard, isFifthCard, image }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const cardProps = useSpring({
@@ -133,7 +133,6 @@ const Carousel = () => {
           onMouseLeave={handleMouseLeave}
         >
           {image && <img src={image} alt="Card" />}
-          <Typography variant='h5'>{brand}</Typography>
         </animated.div>
 
         <animated.div
