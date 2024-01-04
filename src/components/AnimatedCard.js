@@ -136,6 +136,7 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
               </DialogTitle>
               <DialogContent>
                 <DialogContentText>{description}</DialogContentText>
+                <br></br>
                 <DialogContentText>{info}</DialogContentText>
               </DialogContent>
             </Grid>
