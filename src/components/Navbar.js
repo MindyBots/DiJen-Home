@@ -71,7 +71,7 @@ function Navbar() {
                 Brands
               </Link>
             </li>
-            <li>
+         {/*<li>
               <Link
                 onClick={openBar}
                 to="about-scroll"
@@ -96,7 +96,7 @@ function Navbar() {
               >
                 Careers
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link
                 onClick={openBar}

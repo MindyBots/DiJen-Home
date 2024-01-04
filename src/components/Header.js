@@ -35,6 +35,15 @@ function Header() {
       {showVideo && <VideoPlayer videoSrc={videoBackground1} />}
       {!showVideo && <VideoPlayer videoSrc={videoBackground} />}
 
+      <a
+        href="https://wa.me/7200800886"
+        class="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
+
       <h1>DiJen Foods</h1>
       <div className="headerbg"></div>
     </header>
