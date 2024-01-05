@@ -21,9 +21,9 @@ const Teams = () => {
     <h2 className="main-title about-h2">TEAMS</h2>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg" style={{ marginTop: '40px', overflow: 'hidden' }}>
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={6}>
+      <Container maxWidth="lg" style={{ marginTop: '40px' }}>
+        <Grid container spacing={3} justifyContent="center">
+          <Grid item xs={12} sm={6}>
             <AnimatedCard
               title={cards[currentCardIndex].title}
               description={cards[currentCardIndex].description}
@@ -31,7 +31,7 @@ const Teams = () => {
               info={cards[currentCardIndex].info}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <AnimatedCard
               title={cards[currentCardIndex+1].title}
               description={cards[currentCardIndex+1].description}
