@@ -7,6 +7,7 @@ function Main() {
     <>
       <main style={{backgroundColor:'#fffde7'}}>
         <Services />
+        <br></br>
         <About />
         <Teams />
       </main>
