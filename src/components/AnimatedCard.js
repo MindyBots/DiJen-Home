@@ -9,11 +9,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 
 const cardStyle = {
   width: '100%',
-  minHeight: '100px',
+  height: '400px', // Ensure the height matches the width
   backgroundColor: '#e8f5e9',
   position: 'relative',
   overflow: 'hidden',
-  borderRadius: '16px',
+  borderRadius: '50%', // Set border-radius to 50% for a perfect circle
   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   transition: 'transform 0.3s, box-shadow 0.3s',
   cursor: 'pointer',
@@ -22,6 +22,7 @@ const cardStyle = {
     boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
   },
 };
+
 
 const contentStyle = {
   display: 'flex',
@@ -33,10 +34,8 @@ const contentStyle = {
 };
 
 const imageStyle = {
-  width: '100%',
-  height: '500px',
-  borderRadius: '8px',
-  marginBottom: '12px',
+  width: '80px',
+  borderRadius: '50% 50%',
 };
 
 const imageStyle1 = {
@@ -59,33 +58,11 @@ const descriptionStyle = {
   color: '#666',
 };
 
-const infoStyle = {
-  marginBottom: '12px',
-  fontSize: '1rem',
-  color: '#666',
-  height: '500px',
-  padding: '10px'
-};
-
 const AnimatedCard = ({ title, description, imageUrl, info }) => {
   const props = useSpring({
     opacity: 1,
     transform: 'translateY(0)',
     from: { opacity: 0, transform: 'translateY(50px)' },
-  });
-
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const cardProps = useSpring({
-    opacity: isFlipped ? 0 : 1,
-    transform: `perspective(600px) rotateY(${isFlipped ? 180 : 0}deg) scale(${isFlipped ? 0.95 : 1})`,
-    display: isFlipped ? 'none' : 'flex',
-  });
-
-  const backCardProps = useSpring({
-    opacity: isFlipped ? 1 : 0,
-    transform: `perspective(600px) rotateY(${isFlipped ? 0 : -180}deg) scale(${isFlipped ? 1 : 0.95})`,
-    display: isFlipped ? 'flex' : 'none',
   });
 
   const [open, setOpen] = useState(false);
@@ -98,18 +75,14 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
     setOpen(false);
   };
 
-  //const handleClick = () => {
-    //setIsFlipped((prev) => !prev);
-  //};
-
   return (
    <>
-    <animated.div style={{ ...props, ...cardStyle, ...cardProps }}>
+    <animated.div style={{ ...props, ...cardStyle }}>
       <Card elevation={0} sx={cardStyle} onClick={handleClickOpen}>
         <CardContent style={contentStyle}>
           <Grid container spacing={2}>
-            <Grid item xs={6}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
-            <Grid item xs={6}>      
+            <Grid item xs={3.5}>{imageUrl && <img src={imageUrl} alt="Card" style={imageStyle} />}</Grid>
+            <Grid item xs={7.5}>      
               <Typography variant="h5" style={titleStyle}>
                 {title}
               </Typography>
@@ -143,22 +116,6 @@ const AnimatedCard = ({ title, description, imageUrl, info }) => {
           </Grid>
         </CardContent>
       </Dialog>
-    </animated.div>
-
-    <animated.div style={{ ...props, ...cardStyle, ...backCardProps }} /*onClick={handleClick}*/ >
-      <Card elevation={0} sx={cardStyle}>
-        <CardContent style={contentStyle}>
-          <Typography variant="h4" style={titleStyle}>
-            {title}
-          </Typography>
-          <Typography variant="h6" style={descriptionStyle}>
-            {description}
-          </Typography>
-          <Typography variant="body1" style={infoStyle}>
-            {info}
-          </Typography>
-        </CardContent>
-      </Card>
     </animated.div>
    </>
   );

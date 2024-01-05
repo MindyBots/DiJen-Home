@@ -10,6 +10,7 @@ function Main() {
         <br></br>
         <About />
         <Teams />
+        <br></br>
       </main>
     </>
   );
