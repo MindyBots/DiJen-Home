@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Franchise from "./components/Franchise";
+import Contact from './components/Contact';
 import {
   createTheme,
   responsiveFontSizes,
@@ -31,6 +32,7 @@ function App() {
             }
           />
           <Route path="/franchise" element={<Franchise />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </ThemeProvider>
