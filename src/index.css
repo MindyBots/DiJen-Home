@@ -278,7 +278,7 @@ footer .logo {
 }
 .footer-title {
   color: #FFE598;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 22px;
   margin-bottom: 0;
   word-wrap:initial;
@@ -297,7 +297,7 @@ footer ul li a {
 }
 .gotop {
   transition: all 0.2s;
-  background-color: brown;
+  background-color: #FFE598;
   position: fixed;
   border-radius: 25px;
   padding: 1rem;
@@ -306,8 +306,8 @@ footer ul li a {
   outline: 0;
   cursor: pointer;
   font-weight: 1000;
-  box-shadow: 0px 0px 5px 0.2px #fafafa;
-  color: white;
+  /*box-shadow: 0px 0px 5px 0.2px #fafafa; 
+  color: white; */
   bottom: 20px;
   right: 15px;
   margin-bottom: 18px;
