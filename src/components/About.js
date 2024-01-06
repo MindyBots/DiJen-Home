@@ -116,26 +116,26 @@ function About() {
                 <strong>DiJen Foods</strong> established in 2019 under single proprietorship evolved into DiJen Foods Pvt Ltd in 2023. As a first step, we intend to open Asian Stories, a restaurant serving Pan Asian cuisine, with the goal of growing the brand utilizing the franchise model.
               </CustomTabPanel>
               <CustomTabPanel value={value} index={1}>
-                <Grid container spacing={2}>
-                  {cards.map((card, index) => (
-                    <Grid key={index} item xs={12} sm={6} md={4}>
-                      <Zoom in={true} timeout={500 * index}>
-                        <Card sx={{ borderRadius: 8, boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
-                          <CardActionArea sx={{ background: '#F5F5F5' }}>
-                            <CardContent>
-                              <Typography variant="body1" sx={{ fontSize: '1.2em', textAlign: 'center', marginBottom: 3, color: '#00796B' }}>
-                                {card.title}
-                              </Typography>
-                              <Typography variant="body1" sx={{ textAlign: 'center', color: '#555', marginBottom: 2 }}>
-                                {card.content}
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
-                        </Card>
-                      </Zoom>
-                    </Grid>
-                  ))}
-                </Grid>
+              <Grid container spacing={2}>
+      {cards.map((card, index) => (
+        <Grid key={index} item xs={12} sm={6} md={4}>
+          <Zoom in={true} timeout={500 * index}>
+            <Card className="shaking-card"> {/* Add shaking-card class */}
+              <CardActionArea sx={{ background: '#F5F5F5' }}>
+                <CardContent>
+                  <Typography variant="body1" sx={{ fontSize: '1.2em', textAlign: 'center', marginBottom: 3, color: '#00796B' }}>
+                    {card.title}
+                  </Typography>
+                  <Typography variant="body1" sx={{ textAlign: 'center', color: '#555', marginBottom: 2 }}>
+                    {card.content}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Zoom>
+        </Grid>
+      ))}
+    </Grid>
               </CustomTabPanel>
               <CustomTabPanel value={value} index={2}>
                 <p className="main-p">Our Vision is to create a Pan Asian cuisine restaurant showcasing rich flavors and cultural diversity of Asia and also to enhance the dining experience with AI technology and combine skilled chef's artistry with AI innovation.</p>
