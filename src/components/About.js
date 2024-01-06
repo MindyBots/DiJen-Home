@@ -67,6 +67,10 @@ function About() {
                 <Tabs value={value} onChange={handleChange} aria-label="secondary tabs example"  variant="fullWidth" 
                   textColor="secondary"
                   indicatorColor="secondary"
+                  sx = {{
+                      //"& button:hover": {backgroundColor: '#123B37'}
+                      //opacity: 0.8, // Second opacity value
+                  }}
                 >
                   <Tab label={<h2 >OUR Journey</h2>} />
                   <Tab label={<h2 >MISSION</h2>} />
