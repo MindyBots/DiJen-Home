@@ -3,6 +3,10 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 function Footer() {
 
 
+  const linkStyle = {
+    color: '#FFE598', // Replace 'your-color' with the desired color value
+  };
+
   return (
     <footer>
       <div className="container">
@@ -10,10 +14,10 @@ function Footer() {
           <div className="side1">
             <div className="row">
               <div className="col-md-3">
-                <h1 className="logo">DiJen Foods</h1>
+                <h1 className="logo" style={{color:'#FFE598'}}>DiJen Foods</h1>
               </div>
               <div className="col-md-3">
-                <p className="footer-title">Navigation</p>
+                <p className="footer-title" style={{color:'#FFE598'}}>Navigation</p>
                 <ul>
                   <li>
                   <Link   
@@ -21,13 +25,14 @@ function Footer() {
                          smooth={true}
                          duration={1000}
                          to="headerbg"
+                         style={linkStyle}
                   > Home </Link>
                   </li>
                   <li>
-                  <Link to="services" spy={true} smooth={true} duration={1000} > Brands </Link>
+                  <Link to="services" spy={true} smooth={true} duration={1000} style={linkStyle}> Brands </Link>
                   </li>
                   <li>
-                  <Link to="about-scroll" spy={true} smooth={true} duration={1000}> About Us </Link>
+                  <Link to="about-scroll" spy={true} smooth={true} duration={1000} style={linkStyle}> About Us </Link>
                   </li>
                 </ul>
               </div>
@@ -36,33 +41,27 @@ function Footer() {
           <div className="side2">
             <div className="row">
               <div className="col-md-3">
-                <p className="footer-title">Contact</p>
-                <ul style={{color:'white'}}>
+                <p className="footer-title" style={{color:'#FFE598'}}>Contact</p>
+                <ul style={{color:'#FFE598'}}>
                   <li>
-                    Mr. Aswin Thottupurath (Director/ Managing Director)
+                    dijenfoods@gmail.com 
                   </li>
                   <li>
-                    Mr. Surendran Choondanil (Director)
-                  </li>
-                  <li>
-                    Plot No. 106, 4th Main Road, Krishna Nagar, Perumbakkam, Chennai - 600 100
-                  </li>
-                  <li>
-                    +91-72 008 008 86
+                    +91 7200800886
                   </li>
                 </ul>
               </div>
               <div className="col-md-3">
-                <p className="footer-title">Social Media</p>
+                <p className="footer-title" style={linkStyle}>Social Media</p>
                 <ul>
                   <li>
-                    <a target="_blank" rel="noreferrer" href="#">Facebook</a>
+                    <a target="_blank" rel="noreferrer" href="#" style={linkStyle}>Facebook</a>
                   </li>
                   <li>
-                    <a target="_blank" rel="noreferrer" href="#">Youtube</a>
+                    <a target="_blank" rel="noreferrer" href="#" style={linkStyle}>Youtube</a>
                   </li>
                   <li>
-                    <a target="_blank" rel="noreferrer" href="#">LinkedIn</a>
+                    <a target="_blank" rel="noreferrer" href="#" style={linkStyle}>LinkedIn</a>
                   </li>
                 </ul>
               </div>

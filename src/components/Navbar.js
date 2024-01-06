@@ -41,7 +41,7 @@ function Navbar() {
               smooth={true}
               duration={1000}
               to="headerbg"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer",color: '#FFE598'}}
             >
               DiJen Foods
             </Link>
@@ -55,6 +55,7 @@ function Navbar() {
                 smooth={true}
                 duration={1000}
                 to="about-scroll"
+                style={{ color: '#FFE598'}}
               >
                 About Us
               </Link>
@@ -67,6 +68,7 @@ function Navbar() {
                 spy={true}
                 smooth={true}
                 duration={1000}
+                style={{ color: '#FFE598'}}
               >
                 Brands
               </Link>
@@ -80,6 +82,7 @@ function Navbar() {
                 duration={1000}
                 activeClass="active"
                 offset={35}
+                style={{ color: '#FFE598'}}
               >
                 Investors
               </Link>
@@ -102,6 +105,7 @@ function Navbar() {
                 to="/contact"
                 onClick={openBar}
                 duration={1000}
+                style={{ color: '#FFE598'}}
               >
                 Contact Us
               </RouterLink>
@@ -111,6 +115,7 @@ function Navbar() {
                 to="/franchise"
                 onClick={openBar}
                 duration={1000}
+                style={{ color: '#FFE598'}}
               >
                 Franchise
               </RouterLink>

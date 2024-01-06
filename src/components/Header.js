@@ -44,7 +44,8 @@ function Header() {
         <i class="fa fa-whatsapp whatsapp-icon"></i>
       </a>
 
-      <h1>DiJen Foods</h1>
+      <h1 style={{marginBottom:'0'}}>DiJen Foods</h1>
+      <h2 style={{color:'#FFE598', opacity:0.3, marginBottom:'0px'}}>Emerging leader in the food Industry</h2>
       <div className="headerbg"></div>
     </header>
   );

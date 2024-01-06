@@ -48,7 +48,7 @@ function About() {
   };
 
   const highlightedTabStyle = {
-    backgroundColor: '#d7ccc8', // Adjust the background color as needed
+    backgroundColor: '#FFFFFF', // Adjust the background color as needed
   };
 
   return (
@@ -58,24 +58,31 @@ function About() {
       <div className="container about">
         <div className="row">
           <div>
-            <h2 className="main-title about-h2">ABOUT US</h2>
             <p className="main-p">
-              <strong>DiJen Foods</strong> established in 2019 under single proprietorship evolved into DiJen Foods Pvt Ltd in 2023. As a first step, we intend to open Asian Stories, a restaurant serving Pan Asian cuisine, with the goal of growing the brand utilizing the franchise model.
+             
             </p>
             <br></br><br></br>
             <Box sx={{ width: '100%' }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth">
-                  <Tab label={<h3>Our Journey</h3>} {...a11yProps(0)} style={value === 0 ? highlightedTabStyle : {}} />
-                  <Tab label={<h3>Our Vision</h3>} {...a11yProps(1)} style={value === 1 ? highlightedTabStyle : {}} />
-                  <Tab label={<h3>Our Mission</h3>} {...a11yProps(2)} style={value === 2 ? highlightedTabStyle : {}} />
+                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth"
+                sx={{ 
+                  '& .MuiTabs-indicator': {
+                    backgroundColor: '#123B37', // Change this to your desired color
+                  },
+                  '& .Mui-selected': {
+                    color: '#123B37', // Change this to your desired color
+                  },
+                }}>
+                  <Tab label={<h2>Our Journey</h2>} {...a11yProps(0)} style={value === 0 ? highlightedTabStyle : {}} />
+                  <Tab label={<h2>Our Vision</h2>} {...a11yProps(1)} style={value === 1 ? highlightedTabStyle : {}} />
+                  <Tab label={<h2>Our Mission</h2>} {...a11yProps(2)} style={value === 2 ? highlightedTabStyle : {}} />
+                  
                 </Tabs>
               </Box>
               <CustomTabPanel value={value} index={0}>
-                <h3>Our Journey</h3>
+                <strong>DiJen Foods</strong> established in 2019 under single proprietorship evolved into DiJen Foods Pvt Ltd in 2023. As a first step, we intend to open Asian Stories, a restaurant serving Pan Asian cuisine, with the goal of growing the brand utilizing the franchise model.
               </CustomTabPanel>
               <CustomTabPanel value={value} index={1}>
-                <h3>Our Vision</h3>
                 <p className="main-p">Our Vision is to create a Pan Asian cuisine restaurant showcasing rich flavors and cultural diversity of Asia and also to enhance the dining experience with AI technology and combine skilled chef's artistry with AI innovation.</p>
                 <ul>
                   <li className="main-p"><strong>AI-Powered Personalization:</strong> Analyze guest preferences using AI. Tailor menu recommendations based on dietary restrictions and preferences. Continuous learning and adaptation for exceptional dining experiences.</li>
@@ -85,7 +92,6 @@ function About() {
                 </ul>
               </CustomTabPanel>
               <CustomTabPanel value={value} index={2}>
-                <h3>Our Mission</h3>
                 <p className="main-p">Our Mission is to seamlessly blend traditional culinary artistry with AI technology in a Pan Asian cuisine restaurant and to provide unforgettable dining experiences celebrating diverse Asian flavors and cultures.</p>
                 <ul>
                   <li className="main-p"><strong>Menu Curation:</strong> Collaborate with expert chef for meticulous menu curation. Represent authentic tastes and culinary traditions from various Asian countries. Ensure precise ingerdient proportions and cooking methods using automated kitchen equipment.</li>
@@ -97,8 +103,6 @@ function About() {
               </CustomTabPanel>
             </Box>
             <br></br>
-            <h3>Join Us</h3>
-            <p className="main-p">Redefine Pan Asian cuisine with AI. Experience the fusion of tradition and technology at our restaurant.</p>
           </div>
         </div>
       </div>
