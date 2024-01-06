@@ -64,18 +64,13 @@ function About() {
             <br></br><br></br>
             <Box sx={{ width: '100%' }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth" 
-                sx={{ 
-                  '& .MuiTabs-indicator': {
-                    backgroundColor: '#123B37', // Change this to your desired color
-                  },
-                  '& .Mui-selected': {
-                    color: 'secondary', // Change this to your desired color
-                  },
-                }}>
-                  <Tab label={<h2 style={{ color: '#123B37' }}>OUR Journey</h2>} {...a11yProps(0)} style={value === 0 ? highlightedTabStyle : {}} />
-                  <Tab label={<h2 style={{ color: '#123B37' }}> MISSION</h2>} {...a11yProps(1)} style={value === 1 ? highlightedTabStyle : {}} />
-                  <Tab label={<h2 style={{ color: '#123B37' }}> VISION</h2>} {...a11yProps(2)} style={value === 2 ? highlightedTabStyle : {}} />
+                <Tabs value={value} onChange={handleChange} aria-label="secondary tabs example"  variant="fullWidth" 
+                  textColor="secondary"
+                  indicatorColor="secondary"
+                >
+                  <Tab label={<h2 >OUR Journey</h2>} />
+                  <Tab label={<h2 >MISSION</h2>} />
+                  <Tab label={<h2 >VISION</h2>} />
                   
                 </Tabs>
               </Box>

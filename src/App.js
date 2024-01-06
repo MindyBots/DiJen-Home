@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Franchise from "./components/Franchise";
 import Contact from './components/Contact';
+
 import {
   createTheme,
   responsiveFontSizes,
@@ -12,12 +13,18 @@ import {
 } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+export const appTheme = createTheme({
+  palette: {
+    secondary: {
+      main: '#123B37', // we are using secondary in about, otherwise the tabs are not taking custom color.
+    },
+  },
+});
 function App() {
-  let theme = createTheme();
-  theme = responsiveFontSizes(theme);
+  //let theme = responsiveFontSizes(appTheme);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={appTheme}>
       <Router>
         <Routes>
           <Route
