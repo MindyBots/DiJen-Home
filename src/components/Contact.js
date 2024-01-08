@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,15 +16,9 @@ const Contact = () => {
     selectBrand: '',
   });
 
-  const navigate = useNavigate();
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === 'lastName' && value.toLowerCase() === formData.firstName.toLowerCase()) {
-      return;
-    }
-  
     // Regular expressions for validation
     const nameRegex = /^[A-Za-z]*$/;
     const emailRegex = /^[A-Za-z0-9@.]*$/;
@@ -36,8 +29,6 @@ const Contact = () => {
   
     switch (name) {
       case 'firstName':
-        isValid = nameRegex.test(value);
-        break;
       case 'lastName':
         isValid = nameRegex.test(value);
         break;
