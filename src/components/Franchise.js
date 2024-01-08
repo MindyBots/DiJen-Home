@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { FormControl } from '@mui/material';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import Footer from './Footer';
+import Navbar1 from './Navbar1';
 
 const Franchise = () => {
 
@@ -96,6 +98,8 @@ const Franchise = () => {
   const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works', 'Others'];
 
   return (
+    <>
+    <Navbar1 />
     <div style={{ backgroundColor: '#e8eaf6', minHeight: '100vh', padding: '16px' }}>
     <Container maxWidth="md">
       <Box
@@ -197,6 +201,8 @@ const Franchise = () => {
       </Box>
     </Container>
     </div>
+    <Footer />
+    </>
   );
 };
 

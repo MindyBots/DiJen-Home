@@ -78,8 +78,9 @@ const Contact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#e3f2fd', minHeight: '100vh', padding: '16px' }}>
+    <div style={{ padding: '16px' }} className='contact'>
     <Container maxWidth="md">
+      <h2 className="main-title about-h2">CONTACT US</h2>
       <Box
         component={Paper}
         elevation={3}
@@ -89,7 +90,7 @@ const Contact = () => {
           flexDirection: 'column',
           alignItems: 'center',
           margin: 'auto',
-          marginTop: 25,
+          marginTop: 5,
           borderRadius: 8,
         }}
       >

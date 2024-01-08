@@ -98,13 +98,16 @@ function Navbar() {
               </Link>
             </li>*/}
             <li>
-              <RouterLink
-                to="/contact"
+              <Link
                 onClick={openBar}
+                to="contact"
+                spy={true}
+                smooth={true}
                 duration={1000}
+                activeClass="active"
               >
                 Contact Us
-              </RouterLink>
+              </Link>
             </li>
             <li>
               <RouterLink
