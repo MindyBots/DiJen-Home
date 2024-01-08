@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import axios from 'axios';
+import { sendEmail } from './emailService';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,22 +57,18 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!isFormValid()) {
       alert('Please fill in all fields.'); // Display an error message
       return;
     }
-  
+
     try {
-      // Set the sender's email to the user's email
-      const userEmailAddress = formData.email;
-      const response = await axios.post('http://localhost:3000/api/send-email', { ...formData, userEmailAddress });
-  
-      if (response.status === 200) {
-        alert('Feedback submitted successfully!');
-      } else {
-        alert('Failed to submit feedback. Please try again later.');
-      }
+      // Send feedback email using EmailJS
+      await sendEmail(formData);
+      console.log('Feedback submitted:');
+      alert('Feedback submitted successfully.');
+    
     } catch (error) {
       console.error('Error submitting feedback:', error);
       alert('Failed to submit feedback. Please try again later.');
