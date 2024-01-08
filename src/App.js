@@ -8,6 +8,9 @@ import Franchise from "./components/Franchise";
 =======
 import Contact from './components/Contact';
 
+<<<<<<< HEAD
+>>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
+=======
 >>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
 import {
   createTheme,

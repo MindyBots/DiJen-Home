@@ -108,7 +108,11 @@ function Navbar() {
                 smooth={true}
                 duration={1000}
 <<<<<<< HEAD
+<<<<<<< HEAD
                 activeClass="active"
+=======
+                style={{ color: '#FFE598'}}
+>>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
 =======
                 style={{ color: '#FFE598'}}
 >>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
