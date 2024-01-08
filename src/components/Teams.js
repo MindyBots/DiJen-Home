@@ -18,7 +18,7 @@ const Teams = () => {
 
   return (
     <>
-    <h2 className="main-title about-h2">TEAMS</h2>
+    <h2 className="main-title about-h2">OUR TEAM</h2>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg" style={{ marginTop: '40px' }}>

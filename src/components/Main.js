@@ -6,7 +6,7 @@ import Contact from './Contact';
 function Main() {
   return (
     <>
-      <main style={{backgroundColor:'#fffde7'}}>
+      <main>
         <Services />
         <br></br>
         <About />

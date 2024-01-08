@@ -10,11 +10,11 @@ import DialogContentText from '@mui/material/DialogContentText';
 const cardStyle = {
   width: '100%',
   height: '400px', // Ensure the height matches the width
-  backgroundColor: '#e8f5e9',
+  backgroundColor: '#FFFFFF',
   position: 'relative',
   overflow: 'hidden',
   borderRadius: '50%', // Set border-radius to 50% for a perfect circle
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  //boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   transition: 'transform 0.3s, box-shadow 0.3s',
   cursor: 'pointer',
   ':hover': {
