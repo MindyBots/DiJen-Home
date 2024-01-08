@@ -4,14 +4,6 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Franchise from "./components/Franchise";
-<<<<<<< HEAD
-=======
-import Contact from './components/Contact';
-
-<<<<<<< HEAD
->>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
-=======
->>>>>>> 3622c6d2effc51951437f16d619fe29bf57e507c
 import {
   createTheme,
   responsiveFontSizes,
