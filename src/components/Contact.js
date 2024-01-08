@@ -57,30 +57,25 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!isFormValid()) {
       alert('Please fill in all fields.'); // Display an error message
       return;
     }
-
-    // Prepare data to be sent in the email
-    const emailData = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phoneNumber: formData.phoneNumber,
-      feedback: formData.feedback,
-    };
-
+  
     try {
-      // Replace 'your-server-endpoint' with the actual endpoint on your server
-      const response = await axios.post('/api/send-email', emailData);
-
-      // Handle the response as needed
-      console.log('Email sent successfully:', response.data);
+      // Set the sender's email to the user's email
+      const userEmailAddress = formData.email;
+      const response = await axios.post('http://localhost:3000/api/send-email', { ...formData, userEmailAddress });
+  
+      if (response.status === 200) {
+        alert('Feedback submitted successfully!');
+      } else {
+        alert('Failed to submit feedback. Please try again later.');
+      }
     } catch (error) {
-      // Handle errors
-      console.error('Error sending email:', error.message);
+      console.error('Error submitting feedback:', error);
+      alert('Failed to submit feedback. Please try again later.');
     }
   };
 
