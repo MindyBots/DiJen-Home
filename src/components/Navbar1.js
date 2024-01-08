@@ -14,10 +14,6 @@ function Navbar1() {
         <div className="row">
           <h1 className="logo">
             <Link
-              spy={true}
-              smooth={true}
-              duration={1000}
-              to="headerbg"
               style={{ cursor: "pointer" }}
             >
               DiJen Foods
@@ -61,11 +57,6 @@ function Navbar1() {
               </RouterLink>
             </li>
           </ul>
-          <div className="button" onClick={openBar}>
-            <div className="burger"></div>
-            <div className="burger"></div>
-            <div className="burger"></div>
-          </div>
         </div>
       </div>
     </nav>
