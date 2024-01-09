@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { sendEmail } from './emailService';
@@ -93,9 +92,6 @@ const Contact = () => {
             borderRadius: 8,
           }}
         >
-          <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
-            Feedback Form
-          </Typography>
           <form onSubmit={handleSubmit} style={{ width: '100%' }}>
             <TextField
               label="First Name"
@@ -136,7 +132,7 @@ const Contact = () => {
               onChange={handleChange}
             />
             <TextField
-              label="Your Feedback"
+              label="Message"
               variant='outlined'
               fullWidth
               margin='normal'
