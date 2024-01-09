@@ -1,4 +1,5 @@
 import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link as RouterLink } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -32,10 +33,53 @@ function Footer() {
                   > Home </Link>
                   </li>
                   <li>
+                  <Link to="about-scroll" spy={true} smooth={true} duration={1000} style={linkStyle}> About Us </Link>
+                  </li>
+                  <li>
                   <Link to="services" spy={true} smooth={true} duration={1000} style={linkStyle}> Brands </Link>
                   </li>
                   <li>
-                  <Link to="about-scroll" spy={true} smooth={true} duration={1000} style={linkStyle}> About Us </Link>
+                    <RouterLink
+                      to="/investor"
+                      duration={1000}
+                      style={{ color: '#FFE598'}}
+                    >
+                      Investors
+                    </RouterLink>
+                  </li>
+                  <li>
+                    <Link
+                      to="teams"
+                      spy={true}
+                      smooth={true}
+                      duration={1000}
+                      activeClass="active"
+                      offset={35}
+                      style={{ color: '#FFE598'}}
+                    >
+                      Teams
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="contact"
+                      spy={true}
+                      smooth={true}
+                      duration={1000}
+                      activeClass="active"
+                      style={{ color: '#FFE598'}}
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <RouterLink
+                      to="/franchise"
+                      duration={1000}
+                      style={{ color: '#FFE598'}}
+                    >
+                      Franchise
+                    </RouterLink>
                   </li>
                 </ul>
               </div>

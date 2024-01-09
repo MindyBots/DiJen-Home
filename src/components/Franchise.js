@@ -12,6 +12,17 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import Footer1 from './Footer1';
 import Header1 from './Header1';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#123B37',
+    },
+  },
+});
+
 
 const Franchise = () => {
 
@@ -95,7 +106,7 @@ const Franchise = () => {
       navigate('/');
   };
 
-  const selectBrands = ['Namma Veedu Vasanta Bhavan', 'Junior Kuppanna', 'Madras Coffee House', 'Squeez Juice Bars', 'Dessert Works', 'Others'];
+  const selectBrands = ['Asian Katha', 'Chop N Stix', 'Others'];
 
   return (
     <>
@@ -185,6 +196,7 @@ const Franchise = () => {
                 onChange={handleAlphabetsChange}
               />
             )}
+          <ThemeProvider theme={theme}>
           <Button
             type="submit"
             href='/'
@@ -197,6 +209,7 @@ const Franchise = () => {
           >
             Submit
           </Button>
+          </ThemeProvider>
         </form>
       </Box>
     </Container>

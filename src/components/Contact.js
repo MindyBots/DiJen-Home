@@ -5,6 +5,17 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { sendEmail } from './emailService';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#123B37',
+    },
+  },
+});
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +88,7 @@ const Contact = () => {
   return (
     <div style={{ padding: '16px' }}>
       <Container maxWidth="md">
-        <h2 className="main-title about-h2">CONTACT US</h2>
+        <h2 className="main-title about-h2" style={{color:'#123B37'}}>CONTACT US</h2>
         <Box
           component={Paper}
           elevation={3}
@@ -142,6 +153,7 @@ const Contact = () => {
               value={formData.feedback}
               onChange={handleChange}
             />
+            <ThemeProvider theme={theme}>
             <Button
               type="submit"
               variant="contained"
@@ -152,6 +164,7 @@ const Contact = () => {
             >
               Submit
             </Button>
+            </ThemeProvider>
           </form>
         </Box>
       </Container>
