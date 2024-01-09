@@ -10,7 +10,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 const cardStyle = {
   width: '100%',
   height: '400px', // Ensure the height matches the width
-  backgroundColor: '#FFFFFF',
+  backgroundColor: '#fafafa',
   position: 'relative',
   overflow: 'hidden',
   borderRadius: '50%', // Set border-radius to 50% for a perfect circle
