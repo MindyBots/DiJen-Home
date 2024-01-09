@@ -9,6 +9,7 @@ import {
   ThemeProvider,
 } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Investor from './components/Investor';
 
 export const appTheme = createTheme({
   palette: {
@@ -36,6 +37,7 @@ function App() {
             }
           />
           <Route path="/franchise" element={<Franchise />} />
+          <Route path="/investor" element={<Investor />} />
         </Routes>
       </Router>
     </ThemeProvider>

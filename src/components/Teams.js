@@ -21,7 +21,7 @@ const Teams = () => {
     <h2 className="main-title about-h2">OUR TEAM</h2>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg" style={{ marginTop: '40px' }}>
+      <Container maxWidth="lg" style={{ marginTop: '40px' }} className='teams'>
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={12} sm={6}>
             <AnimatedCard

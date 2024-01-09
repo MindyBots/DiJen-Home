@@ -74,9 +74,19 @@ function Navbar() {
               </Link>
             </li>
             <li>
+              <RouterLink
+                to="/investor"
+                onClick={openBar}
+                duration={1000}
+                style={{ color: '#FFE598'}}
+              >
+                Investors
+              </RouterLink>
+            </li>
+            <li>
               <Link
                 onClick={openBar}
-                to="about-scroll"
+                to="teams"
                 spy={true}
                 smooth={true}
                 duration={1000}
@@ -84,22 +94,9 @@ function Navbar() {
                 offset={35}
                 style={{ color: '#FFE598'}}
               >
-                Investors
+                Teams
               </Link>
             </li>
-            {/*<li>
-              <Link
-                onClick={openBar}
-                to="about-scroll"
-                spy={true}
-                smooth={true}
-                duration={1000}
-                activeClass="active"
-                offset={35}
-              >
-                Careers
-              </Link>
-            </li>*/}
             <li>
               <Link
                 onClick={openBar}
