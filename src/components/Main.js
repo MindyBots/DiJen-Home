@@ -7,9 +7,10 @@ function Main() {
   return (
     <>
       <main>
-        <Services />
-        <br></br>
         <About />
+        <br></br>
+        <Services />
+        <br /><br /><br /><br />
         <Teams />
         <br />
         <Contact />

@@ -3,8 +3,8 @@ import { Grid, Typography } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 
 const cardsData = [
-  { id: 1, color: '#ffffff', image: 'AsianKatha.jpeg', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
-  { id: 2, color: '#e53935', image: 'https://i.pinimg.com/280x280_RS/af/88/03/af8803445a3896c2bbb0bc99189569a0.jpg', info: 'If you want to try Chinese and Sichuan cuisines, take your chance and come to this restaurant. Most people note that you can have good fried chicken, mushrooms and fried mushrooms here. Taste tasty brownies that are proposed at Chop N Stix.'},
+  { id: 1, color: '#e3f2fd', image: 'AsianKatha.jpeg', info: 'Namma Veedu Vasanta Bhavan restaurant was started in Trichy by Patron Mr. A. Muthukrishnan. Mr.A.Muthukrishnan started branches in Chennai. The chain of restaurants handled by Mr. M. Ravi was changed to Namma Veedu Vasanta Bhavan chain of restaurants. He is also the Vice President of the Tamil Nadu Hotels Association.' },
+  { id: 2, color: '#ef9a9a', image: 'https://i.pinimg.com/280x280_RS/af/88/03/af8803445a3896c2bbb0bc99189569a0.jpg', info: 'If you want to try Chinese and Sichuan cuisines, take your chance and come to this restaurant. Most people note that you can have good fried chicken, mushrooms and fried mushrooms here. Taste tasty brownies that are proposed at Chop N Stix.'},
   { id: 3, color: '#f5f5f5', brand: 'Coming Soon'}
 ];
 

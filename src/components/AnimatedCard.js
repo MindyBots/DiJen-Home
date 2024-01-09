@@ -8,13 +8,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
 const cardStyle = {
-  width: '100%',
+  width: '600px',
   height: '400px', // Ensure the height matches the width
   backgroundColor: '#fafafa',
   position: 'relative',
   overflow: 'hidden',
-  borderRadius: '50%', // Set border-radius to 50% for a perfect circle
-  //boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   transition: 'transform 0.3s, box-shadow 0.3s',
   cursor: 'pointer',
   ':hover': {
@@ -34,8 +32,9 @@ const contentStyle = {
 };
 
 const imageStyle = {
-  width: '80px',
-  borderRadius: '50% 50%',
+  width: '70px',
+  height: '70px',
+  borderRadius: '50%',
 };
 
 const imageStyle1 = {

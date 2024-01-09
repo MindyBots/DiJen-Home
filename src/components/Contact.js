@@ -76,12 +76,13 @@ const Contact = () => {
   };
 
   return (
-    <div style={{ padding: '16px' }} className='contact'>
+    <div style={{ padding: '16px' }}>
       <Container maxWidth="md">
         <h2 className="main-title about-h2">CONTACT US</h2>
         <Box
           component={Paper}
           elevation={3}
+          className='contact'
           sx={{
             padding: 4,
             display: 'flex',
