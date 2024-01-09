@@ -7,11 +7,10 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
-import { FormControl } from '@mui/material';
+import { AppBar, FormControl, Grid } from '@mui/material';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
-import Footer from './Footer';
-import Navbar1 from './Navbar1';
+import Footer1 from './Footer1';
 
 const Franchise = () => {
 
@@ -99,8 +98,17 @@ const Franchise = () => {
 
   return (
     <>
-    <Navbar1 />
-    <div style={{ backgroundColor: '#e8eaf6', minHeight: '100vh', padding: '16px' }}>
+    <div style={{ backgroundColor: '#e8eaf6', minHeight: '85vh', padding: '10px' }}>
+    <AppBar position='fixed' sx={{ height: '80px', backgroundColor: '#123B37', opacity: 0.9 }}>
+      <Grid container alignItems="center" maxWidth='xl'>
+        <Grid item xs={8} sx={{ml:16}}>
+          <Typography variant='h4' color='#FFE598' sx={{fontWeight: 400, fontSize: '28px', letterSpacing: '2px'}}>DiJen Foods</Typography>
+        </Grid>
+        <Grid item>
+          <Button href='/' sx={{textTransform:'none'}}><Typography variant='body1' color='#FFE598' sx={{letterSpacing: '2px', fontWeight: 300, fontSize: '20px'}}>Home</Typography></Button>
+        </Grid>
+      </Grid>
+    </AppBar>
     <Container maxWidth="md">
       <Box
         component={Paper}
@@ -201,7 +209,7 @@ const Franchise = () => {
       </Box>
     </Container>
     </div>
-    <Footer />
+    <Footer1 />
     </>
   );
 };

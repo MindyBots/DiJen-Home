@@ -1,9 +1,10 @@
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-function Footer() {
+function Footer1() {
 
 
   const linkStyle = {
@@ -23,19 +24,13 @@ function Footer() {
                 <p className="footer-title" style={{color:'#FFE598'}}>Navigation</p>
                 <ul>
                   <li>
-                  <Link   
+                  <Link  
                          spy={true}
                          smooth={true}
                          duration={1000}
-                         to="headerbg"
+                         to="/"
                          style={linkStyle}
                   > Home </Link>
-                  </li>
-                  <li>
-                  <Link to="services" spy={true} smooth={true} duration={1000} style={linkStyle}> Brands </Link>
-                  </li>
-                  <li>
-                  <Link to="about-scroll" spy={true} smooth={true} duration={1000} style={linkStyle}> About Us </Link>
                   </li>
                 </ul>
               </div>
@@ -78,4 +73,4 @@ function Footer() {
     
   );
 }
-export default Footer;
+export default Footer1;
